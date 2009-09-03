@@ -48,10 +48,6 @@ if MACOS_VERSION >= 10.6
     cflags<<" -m64"
     ENV['LDFLAGS']="-arch x86_64"
   end
-else
-  # GCC 4.2.1 is smart and will figure out the right compile flags
-  # http://gcc.gnu.org/onlinedocs/gcc-4.2.1/gcc/i386-and-x86_002d64-Options.html
-  cflags<<"-march=native"
 end
 
 case Hardware.cpu_type
